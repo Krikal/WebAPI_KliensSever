@@ -17,10 +17,11 @@ namespace WebApi_common.Models
         public string CarPlate { get; set; }
 
         public string IssueDeatils { get; set; }
+        public DateTime OrderDate { get; set; }
 
         public override string ToString()
         {
-            return $"{ClientName} - {CarType} - {CarPlate} - {IssueDeatils}";
+            return $"{OrderDate}\t{ClientName}\t{CarType}\t{CarPlate}\t{IssueDeatils}";
         }
     }
 }

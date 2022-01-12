@@ -40,6 +40,7 @@ namespace MunkafelvelvoKliens
                     UpdateOrderListBox();
                 }
                 OrderListBox.UnselectAll();
+                //UpdateOrderListBox();
             }
 
         }

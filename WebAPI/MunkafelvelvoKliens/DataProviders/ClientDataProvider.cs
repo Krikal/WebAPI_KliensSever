@@ -23,7 +23,9 @@ namespace MunkafelvelvoKliens.DataProviders
                 {
                     var rawData = response.Content.ReadAsStringAsync().Result;
                     var clients = JsonConvert.DeserializeObject<IEnumerable<Client>>(rawData);
-                    return clients;
+                    var sortedClients = from c in clients orderby c.OrderDate select c;
+                    
+                    return sortedClients;
                 }
 
                 throw new InvalidOperationException(response.StatusCode.ToString());

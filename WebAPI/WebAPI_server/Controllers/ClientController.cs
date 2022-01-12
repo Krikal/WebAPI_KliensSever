@@ -73,6 +73,7 @@ namespace WebAPI_server.Controllers
                 clientToUpdate.CarPlate = client.CarPlate;
                 clientToUpdate.CarType = client.CarType;
                 clientToUpdate.IssueDeatils = client.IssueDeatils;
+                clientToUpdate.OrderDate = client.OrderDate;
 
                 ClientRepository.StorePeople(clients);
                 return Ok();
