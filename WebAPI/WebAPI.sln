@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI_server", "WebAPI_ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi_common", "WebApi_common\WebApi_common.csproj", "{7DFAF483-B68D-49C5-9BAF-75F584C62B1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MunkafelvelvoKliens", "MunkafelvelvoKliens\MunkafelvelvoKliens.csproj", "{8EE64A95-504B-471E-9C43-E97A98287853}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7DFAF483-B68D-49C5-9BAF-75F584C62B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DFAF483-B68D-49C5-9BAF-75F584C62B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DFAF483-B68D-49C5-9BAF-75F584C62B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EE64A95-504B-471E-9C43-E97A98287853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE64A95-504B-471E-9C43-E97A98287853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE64A95-504B-471E-9C43-E97A98287853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE64A95-504B-471E-9C43-E97A98287853}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
