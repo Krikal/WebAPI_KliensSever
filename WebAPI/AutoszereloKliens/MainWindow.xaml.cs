@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WebApi_common.DataProviders;
+using WebApi_common.Models;
 
 namespace AutoszereloKliens
 {
@@ -23,6 +25,27 @@ namespace AutoszereloKliens
         public MainWindow()
         {
             InitializeComponent();
+            UpdateOrderListBox();
+        }
+
+        private void ListBox_OrderSelectionChanged(object sender, SelectionChangedEventArgs args)
+        {
+            var selectedOrder = OrderListBox.SelectedItem as Client;
+
+            if (selectedOrder != null)
+            {
+                var window = new OrderDetails(selectedOrder);
+                if (window.ShowDialog() ?? false)
+                {
+                    UpdateOrderListBox();
+                }
+            }
+        }
+
+        private void UpdateOrderListBox()
+        {
+            var orders = ClientDataProvider.GetClients().ToList();
+            OrderListBox.ItemsSource = orders;
         }
     }
 }

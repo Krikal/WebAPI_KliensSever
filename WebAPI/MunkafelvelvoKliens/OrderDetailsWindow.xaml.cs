@@ -1,4 +1,4 @@
-﻿using MunkafelvelvoKliens.DataProviders;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WebApi_common.DataProviders;
 using WebApi_common.Models;
 
 namespace MunkafelvelvoKliens
@@ -37,6 +38,7 @@ namespace MunkafelvelvoKliens
                 CarNumberPlateTextBox.Text = _client.CarPlate;
                 IssueDetailTextBox.Text = _client.IssueDeatils;
                 OrderDatePicker.SelectedDate = _client.OrderDate;
+                OrderStatusComboBox.Text = _client.OrderStatus;
 
                 CreateButton.Visibility = Visibility.Collapsed;
                 DeleteButton.Visibility = Visibility.Visible;
@@ -61,6 +63,7 @@ namespace MunkafelvelvoKliens
                 _client.CarPlate = CarNumberPlateTextBox.Text;
                 _client.IssueDeatils = IssueDetailTextBox.Text;
                 _client.OrderDate = OrderDatePicker.SelectedDate.Value;
+                _client.OrderStatus = OrderStatusComboBox.Text;
                 ClientDataProvider.CreateClient(_client);
 
                 DialogResult = true;
@@ -79,7 +82,7 @@ namespace MunkafelvelvoKliens
                 _client.CarPlate = CarNumberPlateTextBox.Text;
                 _client.IssueDeatils = IssueDetailTextBox.Text;
                 _client.OrderDate = OrderDatePicker.SelectedDate.Value;
-                   
+                _client.OrderStatus = OrderStatusComboBox.Text;
                 ClientDataProvider.UpdateClient(_client);
 
                 DialogResult = true;

@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoszereloKliens"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Mechanic client" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Order list " FontFamily="Bold" Margin="15"/>
+        <ListBox x:Name="OrderListBox" Grid.Row="1" Margin="15" SelectionMode="Single" SelectionChanged="ListBox_OrderSelectionChanged"/>
     </Grid>
 </Window>

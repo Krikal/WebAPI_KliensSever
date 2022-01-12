@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebApi_common\WebApi_common.csproj" />
+  </ItemGroup>
+
 </Project>

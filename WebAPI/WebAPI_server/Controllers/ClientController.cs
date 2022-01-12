@@ -74,6 +74,7 @@ namespace WebAPI_server.Controllers
                 clientToUpdate.CarType = client.CarType;
                 clientToUpdate.IssueDeatils = client.IssueDeatils;
                 clientToUpdate.OrderDate = client.OrderDate;
+                clientToUpdate.OrderStatus = client.OrderStatus;
 
                 ClientRepository.StorePeople(clients);
                 return Ok();

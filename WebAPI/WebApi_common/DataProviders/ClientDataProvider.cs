@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using WebApi_common.Models;
 
-namespace MunkafelvelvoKliens.DataProviders
+namespace WebApi_common.DataProviders
 {
-    class ClientDataProvider
+    public class ClientDataProvider
     {
         private const string _url = "http://localhost:5000/api/client";
 
@@ -24,7 +24,7 @@ namespace MunkafelvelvoKliens.DataProviders
                     var rawData = response.Content.ReadAsStringAsync().Result;
                     var clients = JsonConvert.DeserializeObject<IEnumerable<Client>>(rawData);
                     var sortedClients = from c in clients orderby c.OrderDate select c;
-                    
+
                     return sortedClients;
                 }
 
@@ -76,4 +76,5 @@ namespace MunkafelvelvoKliens.DataProviders
             }
         }
     }
+
 }

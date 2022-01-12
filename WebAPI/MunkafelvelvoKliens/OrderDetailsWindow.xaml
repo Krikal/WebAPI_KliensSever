@@ -22,18 +22,26 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Grid.Column="0" Grid.Row="0" Content="Client name" Margin="10"/>
             <Label Grid.Column="0" Grid.Row="1" Content="Car type" Margin="10"/>
             <Label Grid.Column="0" Grid.Row="2" Content="Car number plate" Margin="10"/>
             <Label Grid.Column="0" Grid.Row="3" Content="Issue detail" Margin="10"/>
             <Label Grid.Column="0" Grid.Row="4" Content="Date" Margin="10"/>
+            <Label Grid.Column="0" Grid.Row="5" Content="Status" Margin="10"/>
+            
 
             <TextBox x:Name="ClientNameTextBox" Grid.Column="1" Grid.Row="0"  Margin="0" VerticalAlignment="Center"/>
             <TextBox x:Name="CarTypeTextBox" Grid.Column="1" Grid.Row="1"  Margin="0" VerticalAlignment="Center"/>
             <TextBox x:Name="CarNumberPlateTextBox" Grid.Column="1" Grid.Row="2"  Margin="0" MaxLength="7" VerticalAlignment="Center"/>
             <TextBox x:Name="IssueDetailTextBox" Grid.Column="1" Grid.Row="3"  Margin="0" VerticalAlignment="Center"/>
             <DatePicker x:Name="OrderDatePicker" Grid.Column="1" Grid.Row="4" Margin="0" VerticalAlignment="Center"/>
+            <ComboBox x:Name="OrderStatusComboBox" Grid.Column="1" Grid.Row="5" Margin="15">
+                <ComboBoxItem Content="Felvett munka"/>
+                <ComboBoxItem Content="Elvégzés alatt"/>
+                <ComboBoxItem Content="Befejezett"/>
+            </ComboBox>
 
         </Grid>
         <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom">
