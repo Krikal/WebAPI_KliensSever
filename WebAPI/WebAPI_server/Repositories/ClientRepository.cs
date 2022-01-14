@@ -23,7 +23,7 @@ namespace WebAPI_server.Repositories
             return new List<Client>();
         }
 
-        public static void StorePeople(IEnumerable<Client> clients)
+        public static void StoreClients(IEnumerable<Client> clients)
         {
             var rawData = JsonSerializer.Serialize(clients);
             File.WriteAllText(filename, rawData);

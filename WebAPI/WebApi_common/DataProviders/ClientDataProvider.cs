@@ -17,7 +17,7 @@ namespace WebApi_common.DataProviders
         {
             using (var client = new HttpClient())
             {
-                var response = client.GetAsync(_url).Result;
+                var response =  client.GetAsync(_url).Result;
 
                 if (response.IsSuccessStatusCode)
                 {

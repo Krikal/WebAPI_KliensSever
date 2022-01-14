@@ -97,7 +97,7 @@ namespace MunkafelvelvoKliens
         
         private void DeleteButtonClick(object sender, RoutedEventArgs args)
         {
-            if (MessageBox.Show("Do you really want to deletet?","Question", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Do you really want to deletet?", "Question", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 ClientDataProvider.DeleteClient(_client.Id);
 
@@ -109,8 +109,8 @@ namespace MunkafelvelvoKliens
 
         private bool ValidateClient()
         {
-            var regexSpecialCharacters = new Regex("^[a-zA-Z0-9 ]*$");
-            var regexNumberPlate = new Regex("[A-Z]{3}-[0-9]{3}");
+            //var regexSpecialCharacters = new Regex("^[a-zA-Z0-9 ]*$");
+            //var regexNumberPlate = new Regex("[A-Z]{3}-[0-9]{3}");
             if (string.IsNullOrWhiteSpace(ClientNameTextBox.Text))
             {
                 MessageBox.Show("Client name box should not be empty!");
@@ -118,51 +118,90 @@ namespace MunkafelvelvoKliens
                 
                 
             }
-            if (!regexSpecialCharacters.IsMatch(ClientNameTextBox.Text))
+            /*if (!regexSpecialCharacters.IsMatch(ClientNameTextBox.Text))
             {
                 MessageBox.Show("No special characters in client name!");
                 return false;
-            }
+            }*/
             if (string.IsNullOrWhiteSpace(CarTypeTextBox.Text))
             {
                 MessageBox.Show("Car type box should not be empty!");
                 return false;
                 
             }
-            if (!regexSpecialCharacters.IsMatch(CarTypeTextBox.Text))
+            /*if (!regexSpecialCharacters.IsMatch(CarTypeTextBox.Text))
             {
                 MessageBox.Show("No special characters in car type!");
                 return false;
-            }
+            }*/
             if (string.IsNullOrWhiteSpace(CarNumberPlateTextBox.Text))
             {
                 MessageBox.Show("Car number plate box should not be empty!");
                 return false;
              
             }
-            if (!regexNumberPlate.IsMatch(CarNumberPlateTextBox.Text))
+            /*if (!regexNumberPlate.IsMatch(CarNumberPlateTextBox.Text))
             {
                 MessageBox.Show("Valid form is 'XXX-111'");
                 return false;
-            }
+            }*/
             if (string.IsNullOrWhiteSpace(IssueDetailTextBox.Text))
             {
                 MessageBox.Show("Issue detail box should not be empty!");
                 return false;
              
             }
-            if (!regexSpecialCharacters.IsMatch(IssueDetailTextBox.Text))
+            /*if (!regexSpecialCharacters.IsMatch(IssueDetailTextBox.Text))
             {
                 MessageBox.Show("No special characters in issue detail!");
                 return false;
-            }
+            }*/
             if (!OrderDatePicker.SelectedDate.HasValue)
             {
                 MessageBox.Show("Please select a date of order!");
                 return false;
             }
+            ClientNameValidate(ClientNameTextBox.Text);
+            CarTypeValidate(CarTypeTextBox.Text);
+            CarNumberPlate(CarNumberPlateTextBox.Text);
 
             return true;
         }
+        
+        public bool ClientNameValidate(string clientName)
+        {
+            var regexSpecialCharacters = new Regex("^[a-zA-Z0-9 ]*$");
+            if (!regexSpecialCharacters.IsMatch(clientName))
+            {
+                MessageBox.Show("No special characters in client name!");
+                return false;
+            }
+
+            return true;
+
+        }
+        public bool CarTypeValidate(string carType)
+        {
+            var regexSpecialCharacters = new Regex("^[a-zA-Z0-9 ]*$");
+            if (!regexSpecialCharacters.IsMatch(carType))
+            {
+                MessageBox.Show("No special characters in car type!");
+                return false;
+            }
+
+            return true;
+        }
+        public bool CarNumberPlateValidate(string numberPlate)
+        {
+            var regexNumberPlate = new Regex("[A-Z]{3}-[0-9]{3}");
+            if (!regexNumberPlate.IsMatch(numberPlate))
+            {
+                MessageBox.Show("Valid form is 'XXX-111'");
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }

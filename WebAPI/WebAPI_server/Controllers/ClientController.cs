@@ -42,7 +42,7 @@ namespace WebAPI_server.Controllers
             client.Id = GetNewId(clients);
             clients.Add(client);
 
-            ClientRepository.StorePeople(clients);
+            ClientRepository.StoreClients(clients);
             return Ok();
         }
 
@@ -76,7 +76,7 @@ namespace WebAPI_server.Controllers
                 clientToUpdate.OrderDate = client.OrderDate;
                 clientToUpdate.OrderStatus = client.OrderStatus;
 
-                ClientRepository.StorePeople(clients);
+                ClientRepository.StoreClients(clients);
                 return Ok();
 
             }
@@ -93,7 +93,7 @@ namespace WebAPI_server.Controllers
             {
                 clients.Remove(clientToDelete);
 
-                ClientRepository.StorePeople(clients);
+                ClientRepository.StoreClients(clients);
                 return Ok();
             }
             return NotFound();
